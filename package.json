@@ -1,6 +1,6 @@
 {
   "name": "kqstats-obs",
-  "version": "3.0.0",
+  "version": "0.0.1",
   "description": "KQ stats, but remote!",
   "engines": {
     "node": "16.x"
