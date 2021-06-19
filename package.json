@@ -1,0 +1,28 @@
+{
+  "name": "kqstats-obs",
+  "version": "3.0.0",
+  "description": "KQ stats, but remote!",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "start": "node server",
+    "build": "cd frontend/ && npm install && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "frontend/node_modules"
+  ],
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cscorley/kqstats-heroku.git"
+  },
+  "keywords": [
+    "killer queen"
+  ],
+  "license": "MIT",
+  "devDependencies": {}
+}

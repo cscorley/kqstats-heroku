@@ -1,0 +1,17 @@
+{
+  "name": "kqstats-obs",
+  "description": "KQ stats, but remote!",
+  "scripts": {},
+  "env": {},
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
