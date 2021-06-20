@@ -3,10 +3,6 @@ import * as React from "react";
 import sprites from "../img/sprites";
 import { KQStream, KQStreamOptions } from "../lib/KQStream";
 
-interface KillboardBaseProps {
-  //address?: string;
-}
-
 abstract class KillboardBase<T> extends React.Component<T, GameStatsType> {
   stream: KQStream;
   gameStats: GameStats;
