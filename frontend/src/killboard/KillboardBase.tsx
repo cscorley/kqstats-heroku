@@ -23,10 +23,6 @@ export abstract class KillboardBase<
   }
 
   async connect(stream: KQStream, address: string) {
-    if (address === undefined) {
-      const ip = "kq.lan";
-      address = `ws://${ip}:12749`;
-    }
     console.log(`Connecting to ${address}...`);
     try {
       await stream.connect(address);
