@@ -9,68 +9,164 @@ import "./index.css";
 
 interface CharacterColumnProps {
   character: Character;
+  address: string;
 }
 
 const CharacterColumn = (props: CharacterColumnProps) => (
   <div className="col mb-3">
-    <a href={`/killboard/player/${props.character}`}>
+    <a href={`/killboard/player/${props.character}?address=${props.address}`}>
       <img src={sprites.character[props.character]} alt="character" />
     </a>
   </div>
 );
 
-class Home extends Component {
+interface KillboardLinkProps {
+  text: string;
+  route: string;
+  address: string;
+}
+
+const KillboardLink = (props: KillboardLinkProps) => (
+  <a href={`/killboard/${props.route}?address=${props.address}`}>
+    {props.text}
+  </a>
+);
+
+interface HomeState {
+  address: string;
+}
+
+class Home extends Component<{}, HomeState> {
+  constructor(props: {}) {
+    super(props);
+
+    this.state = { address: "kq.local" };
+  }
+
   render() {
     return (
       <div className="container">
         <h1>Killer Queen Stats</h1>
+        <div className="address">
+          <label htmlFor="address">Cab network address</label>
+          <input
+            name="address"
+            type="text"
+            value={this.state.address}
+            onChange={(e) => {
+              this.setState({ address: e.target.value });
+            }}
+          ></input>
+        </div>
         <div className="roster">
           <div className="row">
-            <CharacterColumn character={Character.GoldStripes} />
-            <CharacterColumn character={Character.GoldAbs} />
-            <CharacterColumn character={Character.GoldQueen} />
-            <CharacterColumn character={Character.GoldSkulls} />
-            <CharacterColumn character={Character.GoldChecks} />
+            <CharacterColumn
+              character={Character.GoldStripes}
+              address={this.state.address}
+            />
+            <CharacterColumn
+              character={Character.GoldAbs}
+              address={this.state.address}
+            />
+            <CharacterColumn
+              character={Character.GoldQueen}
+              address={this.state.address}
+            />
+            <CharacterColumn
+              character={Character.GoldSkulls}
+              address={this.state.address}
+            />
+            <CharacterColumn
+              character={Character.GoldChecks}
+              address={this.state.address}
+            />
           </div>
           <div className="row">
-            <CharacterColumn character={Character.BlueStripes} />
-            <CharacterColumn character={Character.BlueAbs} />
-            <CharacterColumn character={Character.BlueQueen} />
-            <CharacterColumn character={Character.BlueSkulls} />
-            <CharacterColumn character={Character.BlueChecks} />
+            <CharacterColumn
+              character={Character.BlueStripes}
+              address={this.state.address}
+            />
+            <CharacterColumn
+              character={Character.BlueAbs}
+              address={this.state.address}
+            />
+            <CharacterColumn
+              character={Character.BlueQueen}
+              address={this.state.address}
+            />
+            <CharacterColumn
+              character={Character.BlueSkulls}
+              address={this.state.address}
+            />
+            <CharacterColumn
+              character={Character.BlueChecks}
+              address={this.state.address}
+            />
           </div>
         </div>
         <ul>
           <li>
-            <a href="/killboard/full">Full</a>
+            <KillboardLink
+              route="full"
+              text="Full"
+              address={this.state.address}
+            />
           </li>
           <li>
-            <a href="/killboard/horizontal/blue">Blue team</a>
+            <KillboardLink
+              route="horizontal/blue"
+              text="Blue team"
+              address={this.state.address}
+            />
           </li>
           <li>
-            <a href="/killboard/horizontal/blue/mirror">Blue team (mirrored)</a>
+            <KillboardLink
+              route="horizontal/blue/mirror"
+              text="Blue team (mirrored)"
+              address={this.state.address}
+            />
           </li>
           <li>
-            <a href="/killboard/vertical/blue/">Vert Blue team</a>
+            <KillboardLink
+              route="vertical/blue"
+              text="Vert Blue team"
+              address={this.state.address}
+            />
           </li>
           <li>
-            <a href="/killboard/vertical/blue/mirror">
-              Vert Blue team (mirrored)
-            </a>
+            <KillboardLink
+              route="vertical/blue/mirror"
+              text="Vert Blue team (mirrored)"
+              address={this.state.address}
+            />
           </li>
           <li>
-            <a href="/killboard/horizontal/gold">Gold team</a>
+            <KillboardLink
+              route="horizontal/gold"
+              text="Gold team"
+              address={this.state.address}
+            />
           </li>
           <li>
-            <a href="/killboard/horizontal/gold/mirror">Gold team (mirrored)</a>
+            <KillboardLink
+              route="horizontal/gold/mirror"
+              text="Gold team (mirrored)"
+              address={this.state.address}
+            />
           </li>
           <li>
-            <a href="/killboard/vertical/gold">Vert Gold team</a>
+            <KillboardLink
+              route="vertical/gold"
+              text="Vert Gold team"
+              address={this.state.address}
+            />
           </li>
           <li>
-            <a href="/killboard/vertical/gold/mirror">
-              Vert Gold team (mirrored)
-            </a>
+            <KillboardLink
+              route="vertical/gold/mirror"
+              text="Vert Gold team (mirrored)"
+              address={this.state.address}
+            />
           </li>
         </ul>
       </div>
