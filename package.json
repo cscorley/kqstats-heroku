@@ -7,8 +7,8 @@
   },
   "scripts": {
     "start": "node server",
-    "build": "cd frontend/ && npm install && npm install --only=dev && npm run build",
-    "dev": "cd frontend/ && npm install && npm install --only=dev && npm start"
+    "build": "cd frontend/ && npm install && npm run build",
+    "dev": "cd frontend/ && npm install && npm start"
   },
   "cacheDirectories": [
     "node_modules",
