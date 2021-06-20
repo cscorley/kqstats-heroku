@@ -46,6 +46,7 @@ abstract class KillboardBase<T> extends React.Component<T, GameStatsType> {
     this.stream = new KQStream(options);
     this.gameStats = new GameStats(this.stream);
     this.gameStats.start();
+    this.state = GameStats.defaultGameStats;
 
     this.gameStats.on("change", (data: KQStat) => {
       this.setState((prevState) => {

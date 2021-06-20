@@ -1,17 +1,88 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import { Character } from "./lib/models/KQStream";
+import Killboard from "./killboard/Killboard";
+import sprites from "./img/sprites";
+import "./index.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+interface CharacterColumnProps {
+  character: Character;
+}
+
+const CharacterColumn = (props: CharacterColumnProps) => (
+  <div className="col mb-3">
+    <a href={`/killboard/player/${props.character}`}>
+      <img src={sprites.character[props.character]} />
+    </a>
+  </div>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class Home extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <h1>Killer Queen Stats</h1>
+        <div className="roster">
+          <div className="row">
+            <CharacterColumn character={Character.GoldStripes} />
+            <CharacterColumn character={Character.GoldAbs} />
+            <CharacterColumn character={Character.GoldQueen} />
+            <CharacterColumn character={Character.GoldSkulls} />
+            <CharacterColumn character={Character.GoldChecks} />
+          </div>
+          <div className="row">
+            <CharacterColumn character={Character.BlueStripes} />
+            <CharacterColumn character={Character.BlueAbs} />
+            <CharacterColumn character={Character.BlueQueen} />
+            <CharacterColumn character={Character.BlueSkulls} />
+            <CharacterColumn character={Character.BlueChecks} />
+          </div>
+        </div>
+        <ul>
+          <li>
+            <a href="/killboard/full">Full</a>
+          </li>
+          <li>
+            <a href="/killboard/horizontal/blue">Blue team</a>
+          </li>
+          <li>
+            <a href="/killboard/horizontal/blue/mirror">Blue team (mirrored)</a>
+          </li>
+          <li>
+            <a href="/killboard/vertical/blue/">Vert Blue team</a>
+          </li>
+          <li>
+            <a href="/killboard/vertical/blue/mirror">
+              Vert Blue team (mirrored)
+            </a>
+          </li>
+          <li>
+            <a href="/killboard/horizontal/gold">Gold team</a>
+          </li>
+          <li>
+            <a href="/killboard/horizontal/gold/mirror">Gold team (mirrored)</a>
+          </li>
+          <li>
+            <a href="/killboard/vertical/gold">Vert Gold team</a>
+          </li>
+          <li>
+            <a href="/killboard/vertical/gold/mirror">
+              Vert Gold team (mirrored)
+            </a>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <BrowserRouter>
+    <Switch>
+      <Route exact={true} path="/" component={Home} />
+      <Route path="/killboard" component={Killboard} />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root") as HTMLElement
+);
