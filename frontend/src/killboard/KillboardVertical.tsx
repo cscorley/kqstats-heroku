@@ -74,6 +74,8 @@ class KillboardVertical extends KillboardBase<KillboardVerticalProps> {
   }
 
   render() {
+    document.body.style.backgroundColor = "transparent";
+
     if (!this.alias.mirror) {
       return this.renderNormal();
     } else {
@@ -242,11 +244,6 @@ class KillboardVertical extends KillboardBase<KillboardVerticalProps> {
       html.push(crown);
     }
     return html;
-  }
-
-  componentWillMount() {
-    super.componentWillMount();
-    document.body.style.backgroundColor = "transparent";
   }
 }
 

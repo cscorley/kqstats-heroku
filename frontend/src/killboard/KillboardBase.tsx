@@ -64,11 +64,6 @@ export abstract class KillboardBase<
     });
   }
 
-  componentWillMount() {
-    document.body.style.backgroundColor = "black";
-    document.body.style.color = "white";
-  }
-
   async componentDidMount() {
     await this.connect(this.stream, `ws://${this.props.address}:12749`);
   }

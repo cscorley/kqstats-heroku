@@ -80,6 +80,8 @@ class KillboardHorizontal extends KillboardBase<KillboardHorizontalProps> {
   }
 
   render() {
+    document.body.style.backgroundColor = "transparent";
+
     return (
       <div className="killboard horizontal">
         <img src={this.alias.background} alt="background" />
@@ -140,11 +142,6 @@ class KillboardHorizontal extends KillboardBase<KillboardHorizontalProps> {
         </div>
       </div>
     );
-  }
-
-  componentWillMount() {
-    super.componentWillMount();
-    document.body.style.backgroundColor = "transparent";
   }
 }
 
