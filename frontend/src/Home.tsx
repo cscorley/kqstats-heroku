@@ -122,6 +122,7 @@ export class Home extends Component<{}, HomeState> {
             />
           </div>
         </div>
+        <h2>Killboard Layouts</h2>
         <ul>
           <li>
             <KillboardLink
@@ -136,6 +137,7 @@ export class Home extends Component<{}, HomeState> {
               text="Blue team"
               address={this.state.address}
             />
+            <span> (w: 1280, h: 122)</span>
           </li>
           <li>
             <KillboardLink
@@ -143,6 +145,7 @@ export class Home extends Component<{}, HomeState> {
               text="Blue team (mirrored)"
               address={this.state.address}
             />
+            <span> (w: 1280, h: 122)</span>
           </li>
           <li>
             <KillboardLink
@@ -150,6 +153,7 @@ export class Home extends Component<{}, HomeState> {
               text="Vert Blue team"
               address={this.state.address}
             />
+            <span> (w: 500, h: 2500)</span>
           </li>
           <li>
             <KillboardLink
@@ -157,6 +161,7 @@ export class Home extends Component<{}, HomeState> {
               text="Vert Blue team (mirrored)"
               address={this.state.address}
             />
+            <span> (w: 500, h: 2500)</span>
           </li>
           <li>
             <KillboardLink
@@ -164,6 +169,7 @@ export class Home extends Component<{}, HomeState> {
               text="Gold team"
               address={this.state.address}
             />
+            <span> (w: 1280, h: 122)</span>
           </li>
           <li>
             <KillboardLink
@@ -171,6 +177,7 @@ export class Home extends Component<{}, HomeState> {
               text="Gold team (mirrored)"
               address={this.state.address}
             />
+            <span> (w: 1280, h: 122)</span>
           </li>
           <li>
             <KillboardLink
@@ -178,6 +185,7 @@ export class Home extends Component<{}, HomeState> {
               text="Vert Gold team"
               address={this.state.address}
             />
+            <span> (w: 500, h: 2500)</span>
           </li>
           <li>
             <KillboardLink
@@ -185,8 +193,12 @@ export class Home extends Component<{}, HomeState> {
               text="Vert Gold team (mirrored)"
               address={this.state.address}
             />
+            <span> (w: 500, h: 2500)</span>
           </li>
         </ul>
+        <div className="alert alert-info" role="alert">
+          <a href="/about">What is this, and how do I use it?</a>
+        </div>
       </div>
     );
   }
