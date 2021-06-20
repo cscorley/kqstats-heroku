@@ -11,6 +11,8 @@
     "dev": "cd frontend/ && npm install && npm start"
   },
   "cacheDirectories": [
+    "node_modules",
+    "frontend/node_modules"
   ],
   "dependencies": {
     "express": "^4.17.1"
