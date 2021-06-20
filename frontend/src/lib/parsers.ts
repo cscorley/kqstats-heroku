@@ -98,7 +98,7 @@ export function reserveMaiden(value: string[]): ReserveMaiden {
 }
 
 export function unreserveMaiden(value: string[]): UnreserveMaiden {
-  const [x, y, _, character] = value;
+  const [x, y, , character] = value;
   return {
     pos: position(x, y),
     character: Number(character),
@@ -171,7 +171,7 @@ export function getOnSnail(value: string[]): GetOnSnail {
 }
 
 export function getOffSnail(value: string[]): GetOffSnail {
-  const [x, y, _, character] = value;
+  const [x, y, , character] = value;
   return {
     pos: position(x, y),
     character: Number(character),
