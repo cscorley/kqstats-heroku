@@ -83,7 +83,10 @@ class Killboard extends React.Component<RouteComponentProps<{}>> {
           exact={true}
           path={`${this.props.match.path}/player/:character`}
           render={(props) => (
-            <KillboardPlayer address={address} character={Character.BlueAbs} />
+            <KillboardPlayer
+              address={address}
+              character={Number(props.match.params.character) as Character}
+            />
           )}
         />
       </Switch>
