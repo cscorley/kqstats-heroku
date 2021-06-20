@@ -5,6 +5,7 @@ import { Character } from "./lib/models/KQStream";
 import Killboard from "./killboard/Killboard";
 import sprites from "./img/sprites";
 import "./index.css";
+import App from "./App";
 
 interface CharacterColumnProps {
   character: Character;
@@ -82,6 +83,9 @@ ReactDOM.render(
     <Switch>
       <Route exact={true} path="/" component={Home} />
       <Route path="/killboard" component={Killboard} />
+      <Route path="/app">
+        <App />
+      </Route>
     </Switch>
   </BrowserRouter>,
   document.getElementById("root") as HTMLElement
