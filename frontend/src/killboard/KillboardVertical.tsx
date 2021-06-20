@@ -74,8 +74,6 @@ class KillboardVertical extends KillboardBase<KillboardVerticalProps> {
   }
 
   render() {
-    document.body.style.backgroundColor = "transparent";
-
     if (!this.alias.mirror) {
       return this.renderNormal();
     } else {

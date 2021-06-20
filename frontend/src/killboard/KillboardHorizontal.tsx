@@ -80,8 +80,6 @@ class KillboardHorizontal extends KillboardBase<KillboardHorizontalProps> {
   }
 
   render() {
-    document.body.style.backgroundColor = "transparent";
-
     return (
       <div className="killboard horizontal">
         <img src={this.alias.background} alt="background" />

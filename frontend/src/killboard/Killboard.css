@@ -70,6 +70,14 @@ td:not(:nth-child(1)) {
   width: 80px;
 }
 
+.killboard {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: white;
+  background-color: transparent;
+}
+
 .killboard.horizontal {
   position: relative;
   top: 30px;
@@ -125,6 +133,7 @@ td:not(:nth-child(1)) {
 }
 
 .killboard.horizontal .value {
+  color: white;
   position: absolute;
   width: 100px;
   bottom: 0px;

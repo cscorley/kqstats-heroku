@@ -4,6 +4,8 @@ import KillboardFull from "./KillboardFull";
 import KillboardHorizontal from "./KillboardHorizontal";
 import KillboardVertical from "./KillboardVertical";
 import KillboardPlayer from "./KillboardPlayer";
+
+import "bootstrap/dist/css/bootstrap.css";
 import "./Killboard.css";
 import { Character } from "../lib/models/KQStream";
 
