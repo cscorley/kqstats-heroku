@@ -4,6 +4,7 @@ import { render } from "react-dom";
 import { Character } from "./lib/models/KQStream";
 import Killboard from "./killboard/Killboard";
 import sprites from "./img/sprites";
+import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
 
 interface CharacterColumnProps {
