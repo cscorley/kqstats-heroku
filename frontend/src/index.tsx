@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import { Component } from "react";
+import { render } from "react-dom";
 import { Character } from "./lib/models/KQStream";
 import Killboard from "./killboard/Killboard";
 import sprites from "./img/sprites";
@@ -18,7 +18,7 @@ const CharacterColumn = (props: CharacterColumnProps) => (
   </div>
 );
 
-class Home extends React.Component {
+class Home extends Component {
   render() {
     return (
       <div className="container">
@@ -77,7 +77,7 @@ class Home extends React.Component {
   }
 }
 
-ReactDOM.render(
+render(
   <BrowserRouter>
     <Switch>
       <Route exact={true} path="/" component={Home} />
