@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Character } from "../lib/models/KQStream";
-import KillboardBase from "./KillboardBase";
+import { KillboardBase, KillboardBaseProps } from "./KillboardBase";
 
-interface KillboardVerticalProps {
+interface KillboardVerticalProps extends KillboardBaseProps {
   team: "blue" | "gold";
   mirror?: undefined | boolean;
 }

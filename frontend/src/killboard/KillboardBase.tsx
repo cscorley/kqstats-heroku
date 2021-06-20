@@ -3,7 +3,13 @@ import * as React from "react";
 import sprites from "../img/sprites";
 import { KQStream, KQStreamOptions } from "../lib/KQStream";
 
-abstract class KillboardBase<T> extends React.Component<T, GameStatsType> {
+export interface KillboardBaseProps {
+  address: string;
+}
+
+export abstract class KillboardBase<
+  T extends KillboardBaseProps
+> extends React.Component<T, GameStatsType> {
   stream: KQStream;
   gameStats: GameStats;
 
@@ -64,8 +70,6 @@ abstract class KillboardBase<T> extends React.Component<T, GameStatsType> {
   }
 
   async componentDidMount() {
-    await this.connect(this.stream, "ws://192.168.1.34:12749");
+    await this.connect(this.stream, `ws://${this.props.address}:12749`);
   }
 }
-
-export default KillboardBase;

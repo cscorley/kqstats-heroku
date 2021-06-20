@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Character } from "../lib/models/KQStream";
-import KillboardBase from "./KillboardBase";
+import { KillboardBase, KillboardBaseProps } from "./KillboardBase";
 
 const goldBackground = require("../img/gold_team.png");
 const blueBackground = require("../img/blue_team.png");
 const goldBackgroundMirror = require("../img/gold_team_mirror.png");
 const blueBackgroundMirror = require("../img/blue_team_mirror.png");
 
-interface KillboardHorizontalProps {
+interface KillboardHorizontalProps extends KillboardBaseProps {
   team: "blue" | "gold";
   mirror: boolean;
 }

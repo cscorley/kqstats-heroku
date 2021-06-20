@@ -9,57 +9,82 @@ import { Character } from "../lib/models/KQStream";
 
 class Killboard extends React.Component<RouteComponentProps<{}>> {
   render() {
+    const query = new URLSearchParams(this.props.location.search);
+    const queryAddress = query.get("address");
+    let address = "kq.local";
+    if (queryAddress) {
+      address = queryAddress;
+    }
+
     return (
       <Switch>
         <Route
           exact={true}
           path={`${this.props.match.path}/full`}
-          component={KillboardFull}
+          render={(props) => <KillboardFull address={address} />}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/horizontal/blue`}
-          render={(props) => <KillboardHorizontal team="blue" mirror={false} />}
+          render={(props) => (
+            <KillboardHorizontal address={address} team="blue" mirror={false} />
+          )}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/horizontal/gold`}
-          render={(props) => <KillboardHorizontal team="gold" mirror={false} />}
+          render={(props) => (
+            <KillboardHorizontal address={address} team="gold" mirror={false} />
+          )}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/horizontal/blue/mirror`}
-          render={(props) => <KillboardHorizontal team="blue" mirror={true} />}
+          render={(props) => (
+            <KillboardHorizontal address={address} team="blue" mirror={true} />
+          )}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/horizontal/gold/mirror`}
-          render={(props) => <KillboardHorizontal team="gold" mirror={true} />}
+          render={(props) => (
+            <KillboardHorizontal address={address} team="gold" mirror={true} />
+          )}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/vertical/blue`}
-          render={(props) => <KillboardVertical team="blue" />}
+          render={(props) => (
+            <KillboardVertical address={address} team="blue" />
+          )}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/vertical/gold`}
-          render={(props) => <KillboardVertical team="gold" />}
+          render={(props) => (
+            <KillboardVertical address={address} team="gold" />
+          )}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/vertical/blue/mirror`}
-          render={(props) => <KillboardVertical team="blue" mirror={true} />}
+          render={(props) => (
+            <KillboardVertical address={address} team="blue" mirror={true} />
+          )}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/vertical/gold/mirror`}
-          render={(props) => <KillboardVertical team="gold" mirror={true} />}
+          render={(props) => (
+            <KillboardVertical address={address} team="gold" mirror={true} />
+          )}
         />
         <Route
           exact={true}
           path={`${this.props.match.path}/player/:character`}
-          render={(props) => <KillboardPlayer character={Character.BlueAbs} />}
+          render={(props) => (
+            <KillboardPlayer address={address} character={Character.BlueAbs} />
+          )}
         />
       </Switch>
     );

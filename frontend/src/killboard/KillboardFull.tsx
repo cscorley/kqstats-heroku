@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Character } from "../lib/models/KQStream";
 import sprites from "../img/sprites";
-import KillboardBase from "./KillboardBase";
+import { KillboardBase, KillboardBaseProps } from "./KillboardBase";
 
 const KillboardRow = (props: any) => {
   return (
@@ -19,7 +19,7 @@ const KillboardRow = (props: any) => {
   );
 };
 
-interface KillboardFullProps {}
+interface KillboardFullProps extends KillboardBaseProps {}
 
 class KillboardFull extends KillboardBase<KillboardFullProps> {
   render() {
