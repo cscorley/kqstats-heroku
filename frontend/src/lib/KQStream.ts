@@ -54,6 +54,8 @@ export type GameEvents = {
   berryKickIn: BerryKickIn;
 };
 
+type ConnectionOpen = {};
+
 type ConnectionClose = {
   code: number;
   desc: string;
@@ -65,6 +67,7 @@ type ConnectionError = {
 };
 
 type StreamEvents = {
+  connectionOpen: ConnectionOpen;
   connectionClose: ConnectionClose;
   connectionError: ConnectionError;
 };
@@ -151,7 +154,11 @@ export class KQStream extends ProtectedEventEmitter<Events> {
     };
 
     this.socket.onopen = (e) => {
-      this.sendMessage("connect", { name: "ya boy", isGameMachine: false });
+      this.protectedEmit("connectionOpen", {});
+      this.sendMessage("connect", {
+        name: "kqstats-obs",
+        isGameMachine: false,
+      });
     };
   }
 

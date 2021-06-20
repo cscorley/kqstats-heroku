@@ -6,6 +6,8 @@ import Killboard from "./killboard/Killboard";
 import sprites from "./img/sprites";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
+import { KQStream, KQStreamOptions } from "./lib/KQStream";
+import { debounce } from "lodash";
 
 interface CharacterColumnProps {
   character: Character;
@@ -34,27 +36,45 @@ const KillboardLink = (props: KillboardLinkProps) => (
 
 interface HomeState {
   address: string;
+  connected: boolean;
 }
 
 class Home extends Component<{}, HomeState> {
+  stream: KQStream;
+
   constructor(props: {}) {
     super(props);
 
-    this.state = { address: "kq.local" };
+    this.state = { address: "kq.local", connected: false };
+
+    const options: KQStreamOptions = {};
+    this.stream = new KQStream(options);
+    this.stream.on("connectionOpen", () => {
+      this.setState({ connected: true });
+    });
+    this.stream.on("connectionError", () => {
+      this.setState({ connected: false });
+    });
+    this.stream.on("connectionClose", () => {
+      this.setState({ connected: false });
+    });
   }
 
   render() {
     return (
       <div className="container">
         <h1>Killer Queen Stats</h1>
-        <div className="address">
+        <div
+          className={this.state.connected ? "addressSuccess" : "addressFailure"}
+        >
           <label htmlFor="address">Cab network address</label>
           <input
             name="address"
             type="text"
             value={this.state.address}
-            onChange={(e) => {
-              this.setState({ address: e.target.value });
+            onChange={async (e) => {
+              this.setState({ address: e.target.value, connected: false });
+              await this.testConnect();
             }}
           ></input>
         </div>
@@ -171,6 +191,18 @@ class Home extends Component<{}, HomeState> {
         </ul>
       </div>
     );
+  }
+
+  testConnect = debounce(async () => {
+    try {
+      await this.stream.connect(`ws://${this.state.address}:12749`);
+    } catch (error) {
+      console.error("Unable to connect to address", error);
+    }
+  }, 500);
+
+  async componentDidMount() {
+    await this.testConnect();
   }
 }
 
