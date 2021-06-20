@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "BumbleBash Sans";
+  src: local("BumbleBash Sans"), url("../fonts/BumbleBashSans.otf");
+}
+
 table {
   border-collapse: collapse;
 }
@@ -106,7 +111,7 @@ td:not(:nth-child(1)) {
 
 .killboard.vertical .player-container .score-container {
   float: left;
-  font-family: "Sans";
+  font-family: "BumbleBash Sans";
   color: white;
   font-size: 150px;
   width: 600px;
