@@ -76,7 +76,8 @@ class Home extends Component<{}, HomeState> {
               this.setState({ address: e.target.value, connected: false });
               await this.testConnect();
             }}
-          ></input>
+          />
+          <span>{this.state.connected ? " ✅" : " ❓"}</span>
         </div>
         <div className="roster">
           <div className="row">
