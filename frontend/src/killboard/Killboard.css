@@ -106,7 +106,7 @@ td:not(:nth-child(1)) {
 
 .killboard.vertical .player-container .score-container {
   float: left;
-  font-family: "BumbleBash Sans";
+  font-family: "Sans";
   color: white;
   font-size: 150px;
   width: 600px;

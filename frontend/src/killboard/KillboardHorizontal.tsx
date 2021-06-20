@@ -2,10 +2,10 @@ import * as React from "react";
 import { Character } from "../lib/models/KQStream";
 import { KillboardBase, KillboardBaseProps } from "./KillboardBase";
 
-const goldBackground = require("../img/gold_team.png");
-const blueBackground = require("../img/blue_team.png");
-const goldBackgroundMirror = require("../img/gold_team_mirror.png");
-const blueBackgroundMirror = require("../img/blue_team_mirror.png");
+import goldBackground from "../img/gold_team.png";
+import blueBackground from "../img/blue_team.png";
+import goldBackgroundMirror from "../img/gold_team_mirror.png";
+import blueBackgroundMirror from "../img/blue_team_mirror.png";
 
 interface KillboardHorizontalProps extends KillboardBaseProps {
   team: "blue" | "gold";
@@ -33,22 +33,22 @@ class KillboardHorizontal extends KillboardBase<KillboardHorizontalProps> {
         this.alias = {
           background: blueBackground,
           position: {
-            [1]: Character.BlueChecks,
-            [2]: Character.BlueSkulls,
-            [3]: Character.BlueQueen,
-            [4]: Character.BlueAbs,
-            [5]: Character.BlueStripes,
+            1: Character.BlueChecks,
+            2: Character.BlueSkulls,
+            3: Character.BlueQueen,
+            4: Character.BlueAbs,
+            5: Character.BlueStripes,
           },
         };
       } else {
         this.alias = {
           background: blueBackgroundMirror,
           position: {
-            [1]: Character.BlueStripes,
-            [2]: Character.BlueAbs,
-            [3]: Character.BlueQueen,
-            [4]: Character.BlueSkulls,
-            [5]: Character.BlueChecks,
+            1: Character.BlueStripes,
+            2: Character.BlueAbs,
+            3: Character.BlueQueen,
+            4: Character.BlueSkulls,
+            5: Character.BlueChecks,
           },
         };
       }
@@ -57,22 +57,22 @@ class KillboardHorizontal extends KillboardBase<KillboardHorizontalProps> {
         this.alias = {
           background: goldBackground,
           position: {
-            [1]: Character.GoldChecks,
-            [2]: Character.GoldSkulls,
-            [3]: Character.GoldQueen,
-            [4]: Character.GoldAbs,
-            [5]: Character.GoldStripes,
+            1: Character.GoldChecks,
+            2: Character.GoldSkulls,
+            3: Character.GoldQueen,
+            4: Character.GoldAbs,
+            5: Character.GoldStripes,
           },
         };
       } else {
         this.alias = {
           background: goldBackgroundMirror,
           position: {
-            [1]: Character.GoldStripes,
-            [2]: Character.GoldAbs,
-            [3]: Character.GoldQueen,
-            [4]: Character.GoldSkulls,
-            [5]: Character.GoldChecks,
+            1: Character.GoldStripes,
+            2: Character.GoldAbs,
+            3: Character.GoldQueen,
+            4: Character.GoldSkulls,
+            5: Character.GoldChecks,
           },
         };
       }
@@ -82,7 +82,7 @@ class KillboardHorizontal extends KillboardBase<KillboardHorizontalProps> {
   render() {
     return (
       <div className="killboard horizontal">
-        <img src={this.alias.background} />
+        <img src={this.alias.background} alt="background" />
         <div className="value" style={{ left: "14px" }}>
           {this.state[this.alias.position[1]].kills}
         </div>

@@ -13,7 +13,7 @@ interface CharacterColumnProps {
 const CharacterColumn = (props: CharacterColumnProps) => (
   <div className="col mb-3">
     <a href={`/killboard/player/${props.character}`}>
-      <img src={sprites.character[props.character]} />
+      <img src={sprites.character[props.character]} alt="character" />
     </a>
   </div>
 );

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import * as React from "react";
 import { Character } from "../lib/models/KQStream";
 import { KillboardBase, KillboardBaseProps } from "./KillboardBase";
@@ -36,18 +37,18 @@ class KillboardVertical extends KillboardBase<KillboardVerticalProps> {
         mirror: !!props.mirror,
         team: props.team,
         spriteName: {
-          [1]: `/img/sprites_v2/${props.team}_Queen.png`,
-          [2]: `/img/sprites_v2/${props.team}_Skulls.png`,
-          [3]: `/img/sprites_v2/${props.team}_Abs.png`,
-          [4]: `/img/sprites_v2/${props.team}_Stripes.png`,
-          [5]: `/img/sprites_v2/${props.team}_Chex.png`,
+          1: `/img/sprites_v2/${props.team}_Queen.png`,
+          2: `/img/sprites_v2/${props.team}_Skulls.png`,
+          3: `/img/sprites_v2/${props.team}_Abs.png`,
+          4: `/img/sprites_v2/${props.team}_Stripes.png`,
+          5: `/img/sprites_v2/${props.team}_Chex.png`,
         },
         position: {
-          [1]: Character.BlueQueen,
-          [2]: Character.BlueSkulls,
-          [3]: Character.BlueAbs,
-          [4]: Character.BlueStripes,
-          [5]: Character.BlueChecks,
+          1: Character.BlueQueen,
+          2: Character.BlueSkulls,
+          3: Character.BlueAbs,
+          4: Character.BlueStripes,
+          5: Character.BlueChecks,
         },
       };
     } else {
@@ -55,18 +56,18 @@ class KillboardVertical extends KillboardBase<KillboardVerticalProps> {
         mirror: !!props.mirror,
         team: props.team,
         spriteName: {
-          [1]: `/img/sprites_v2/${props.team}_Queen.png`,
-          [2]: `/img/sprites_v2/${props.team}_Skulls.png`,
-          [3]: `/img/sprites_v2/${props.team}_Abs.png`,
-          [4]: `/img/sprites_v2/${props.team}_Stripes.png`,
-          [5]: `/img/sprites_v2/${props.team}_Chex.png`,
+          1: `/img/sprites_v2/${props.team}_Queen.png`,
+          2: `/img/sprites_v2/${props.team}_Skulls.png`,
+          3: `/img/sprites_v2/${props.team}_Abs.png`,
+          4: `/img/sprites_v2/${props.team}_Stripes.png`,
+          5: `/img/sprites_v2/${props.team}_Chex.png`,
         },
         position: {
-          [1]: Character.GoldQueen,
-          [2]: Character.GoldSkulls,
-          [3]: Character.GoldAbs,
-          [4]: Character.GoldStripes,
-          [5]: Character.GoldChecks,
+          1: Character.GoldQueen,
+          2: Character.GoldSkulls,
+          3: Character.GoldAbs,
+          4: Character.GoldStripes,
+          5: Character.GoldChecks,
         },
       };
     }
