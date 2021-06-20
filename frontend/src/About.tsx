@@ -72,8 +72,8 @@ export class About extends React.Component {
           </li>
           <li>
             Check "Shutdown source when not visible". This saves resources in
-            OBS and allows you to "reload" the killboard by hiding and shoing it
-            again.
+            OBS and allows you to "reload" the killboard by hiding and showing
+            it again.
           </li>
           <li>
             Check "Refresh browser when scene becomes active". This reloads the
