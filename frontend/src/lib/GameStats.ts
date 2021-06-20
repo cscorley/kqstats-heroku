@@ -56,7 +56,7 @@ export class GameStats extends ProtectedEventEmitter<Events> {
       [Character.BlueChecks]: GameStats.defaultCharacterStats,
     };
   }
-  private static get defaultCharacterStats(): CharacterStatsType {
+  static get defaultCharacterStats(): CharacterStatsType {
     return {
       kills: 0,
       queen_kills: 0,
