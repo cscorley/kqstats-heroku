@@ -41,6 +41,9 @@ const maps: { [key: string]: GameMap } = {
   mapDay: GameMap.Day,
   mapNight: GameMap.Night,
   mapDusk: GameMap.Dusk,
+  mapMeat: GameMap.Meat,
+  mapTwilight: GameMap.Meat,
+  mapTwilight2: GameMap.Meat,
 };
 
 const orientations: { [key: string]: CabOrientation } = {

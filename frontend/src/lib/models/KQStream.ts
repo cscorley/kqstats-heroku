@@ -17,31 +17,32 @@ export enum Character {
 }
 
 export enum Team {
-  Gold = 'GOLD',
-  Blue = 'BLUE',
+  Gold = "GOLD",
+  Blue = "BLUE",
 }
 
 export enum Maiden {
-  Warrior = 'WARRIOR',
-  Speed = 'SPEED',
+  Warrior = "WARRIOR",
+  Speed = "SPEED",
 }
 
 export enum GameMap {
-  Day = 'DAY',
-  Night = 'NIGHT',
-  Dusk = 'DUSK',
+  Day = "DAY",
+  Night = "NIGHT",
+  Dusk = "DUSK",
+  Meat = "MEAT",
 }
 
 // Read keys as LeftRight
 export enum CabOrientation {
-  BlueOnLeft = 'BLUE_ON_LEFT',
-  GoldOnLeft = 'GOLD_ON_LEFT',
+  BlueOnLeft = "BLUE_ON_LEFT",
+  GoldOnLeft = "GOLD_ON_LEFT",
 }
 
 export enum VictoryType {
-  Military = 'MILITARY',
-  Econimic = 'ECONIMIC',
-  Snail = 'SNAIL',
+  Military = "MILITARY",
+  Econimic = "ECONIMIC",
+  Snail = "SNAIL",
 }
 
 export interface PlayerNames {}
